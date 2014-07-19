@@ -33,3 +33,7 @@ $jq(window).resize(function() {
 $jq(document).scroll(function() {
   stickyFoot();
 });
+
+$jq(document).ready(function() {
+  $('#main-panel').removeClass('col-md-9').addClass('col-md-8');
+});
