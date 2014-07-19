@@ -35,5 +35,9 @@ $jq(document).scroll(function() {
 });
 
 $jq(document).ready(function() {
-  $jq('#main-panel').removeClass('col-md-9').addClass('col-md-8');
+  $jq('#main-panel')
+    .removeClass('col-md-9').addClass('col-md-8')
+    .attr('style', 'border-left: none !important;')
+      .find("div[style='float:right'] div[align='right']")
+        .attr('align', 'left');
 });
