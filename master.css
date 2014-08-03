@@ -227,7 +227,8 @@ td {
     border: none!important;
     padding-right: 5px!important;
     height: 25px;
-    font-size: 13px!important;
+    font-size: 14px!important;
+    font-family: sans-serif;
 }
 
 td.inactive:hover {
@@ -777,7 +778,7 @@ img[src$="images/32x32/aborted.png"],  img[src$="images/32x32/aborted.gif"],  im
     width: 0;
     height: 24px;
     padding: 0 24px 0 0;
-	margin-left: 5px;
+    margin-left: 5px;
 }
 
 img[src$="images/48x48/blue.png"],     img[src$="images/48x48/blue.gif"],     img[src$="images/48x48/blue_anime.gif"],
