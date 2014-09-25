@@ -56,7 +56,14 @@
                 }
 
                 $this.data('forcePostInstrumented', true).click(function() {
-                    $.post($this.prop('href'));
+
+                    $.post($this.prop('href')).done(function() {
+
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 1000)
+                    });
+
                     return false;
                 });
             });
