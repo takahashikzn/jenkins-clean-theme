@@ -41,3 +41,18 @@ $jq(document).ready(function() {
       .find("div[style='float:right'] div[align='right']")
         .attr('align', 'left');
 });
+
+$jq(document).find('a[href^=job/]').each(function() {
+
+    var $this = $(this);
+
+    $this.click(function() {
+
+        $('<form />').attr({
+            action: $this.attr('href'),
+            method: 'POST'
+        }).after($this).submit();
+
+        return false;
+    });
+});
