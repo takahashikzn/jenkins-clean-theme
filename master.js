@@ -60,6 +60,6 @@
                     return false;
                 });
             });
-    }, 100);
+    }, 250);
 
 })(jQuery.noConflict(true));
