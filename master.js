@@ -42,17 +42,21 @@ $jq(document).ready(function() {
         .attr('align', 'left');
 });
 
-$jq(document).find('a[href^=job/]').each(function() {
+setInterval(function() {
 
-    var $this = $(this);
+    $jq(document)
+        .find("a[href^='job/'][href*='/build'], a[href='/cancelQuietDown']")
+        .each(function() {
 
-    $this.click(function() {
+            var $this = $jq(this);
 
-        $('<form />').attr({
-            action: $this.attr('href'),
-            method: 'POST'
-        }).after($this).submit();
+            if ($this.data('forcePostInstrumented')) {
+                return;
+            }
 
-        return false;
-    });
-});
+            $this.data('forcePostInstrumented', true).click(function() {
+                $jq.post($this.prop('href'));
+                return false;
+            });
+        });
+}, 100);
