@@ -73,7 +73,7 @@
                     });
             }, 250);
 
-            // dashbord page only
+            // top page only
             if (window.location.pathname === '/') {
 
                 var countExecutingJobs = function() {
