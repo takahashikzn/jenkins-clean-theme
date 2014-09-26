@@ -43,43 +43,50 @@
                 .attr('align', 'left');
     });
 
-    var countExecutingJobs = function() {
-        return $('#executors .progress-bar').length;
-    };
-
-    var reloadPage = function() {
+    $(document).ready(function() {
         setTimeout(function() {
-            window.location.reload();
-        }, 1000)
-    };
 
-    var executingJobNum = countExecutingJobs();
+            var reloadPage = function() {
+                setTimeout(function() {
+                    window.location.reload();
+                }, 1000)
+            };
 
-    setInterval(function() {
+            setInterval(function() {
 
-        $(document)
-            .find("a[href^='job/'][href*='/build'], a[href='/cancelQuietDown']")
-            .each(function() {
+                $(document)
+                    .find("a[href^='job/'][href*='/build'], a[href='/cancelQuietDown']")
+                    .each(function() {
 
-                var $this = $(this);
+                        var $this = $(this);
 
-                if ($this.data('forcePostInstrumented')) {
-                    return;
+                        if ($this.data('forcePostInstrumented')) {
+                            return;
+                        }
+
+                        $this.data('forcePostInstrumented', true).click(function() {
+
+                            $.post($this.prop('href')).done(reloadPage);
+
+                            return false;
+                        });
+                    });
+            }, 250);
+
+            var countExecutingJobs = function() {
+                return $('#executors .progress-bar').length;
+            };
+
+            var executingJobNum = countExecutingJobs();
+
+            setInterval(function() {
+                if (executingJobNum !== countExecutingJobs()) {
+                    reloadPage();
                 }
+            }, 1000);
 
-                $this.data('forcePostInstrumented', true).click(function() {
-
-                    $.post($this.prop('href')).done(reloadPage);
-
-                    return false;
-                });
-            });
-
-
-        if (executingJobNum !== countExecutingJobs()) {
-            reloadPage();
-        }
-    }, 250);
+        }, 1000);
+    });
 
     window.$jq = $; // keep for later use
 
