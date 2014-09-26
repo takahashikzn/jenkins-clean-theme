@@ -73,17 +73,21 @@
                     });
             }, 250);
 
-            var countExecutingJobs = function() {
-                return $('#executors .progress-bar').length;
-            };
+            // dashbord page only
+            if (window.location.pathname === '/') {
 
-            var executingJobNum = countExecutingJobs();
+                var countExecutingJobs = function() {
+                    return $('#executors .progress-bar').length;
+                };
 
-            setInterval(function() {
-                if (executingJobNum !== countExecutingJobs()) {
-                    reloadPage();
-                }
-            }, 1000);
+                var executingJobNum = countExecutingJobs();
+
+                setInterval(function() {
+                    if (executingJobNum !== countExecutingJobs()) {
+                        reloadPage();
+                    }
+                }, 1000);
+            }
 
         }, 1000);
     });
