@@ -81,4 +81,6 @@
         }
     }, 250);
 
+    window.$jq = $; // keep for later use
+
 })(jQuery.noConflict(true));
