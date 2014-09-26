@@ -43,6 +43,18 @@
                 .attr('align', 'left');
     });
 
+    var countExecutingJobs = function() {
+        return $('#executors .progress-bar').length;
+    };
+
+    var reloadPage = function() {
+        setTimeout(function() {
+            window.location.reload();
+        }, 1000)
+    };
+
+    var executingJobNum = countExecutingJobs();
+
     setInterval(function() {
 
         $(document)
@@ -57,16 +69,16 @@
 
                 $this.data('forcePostInstrumented', true).click(function() {
 
-                    $.post($this.prop('href')).done(function() {
-
-                        setTimeout(function() {
-                            window.location.reload();
-                        }, 1000)
-                    });
+                    $.post($this.prop('href')).done(reloadPage);
 
                     return false;
                 });
             });
+
+
+        if (executingJobNum !== countExecutingJobs()) {
+            reloadPage();
+        }
     }, 250);
 
 })(jQuery.noConflict(true));
