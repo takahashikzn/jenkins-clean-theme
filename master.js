@@ -74,7 +74,7 @@
             }, 250);
 
             // top page or view page only
-            if ((window.location.pathname === '/') || window.location.pathname.startsWith('/view/')) {
+            if ((window.location.pathname === '/') || /\/view\/\w+\/?$/.test(window.location.pathname)) {
 
                 var countExecutingJobs = function() {
                     return $('#executors .progress-bar').length;
