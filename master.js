@@ -73,8 +73,8 @@
                     });
             }, 250);
 
-            // top page only
-            if (window.location.pathname === '/') {
+            // top page or view page only
+            if ((window.location.pathname === '/') || window.location.pathname.startsWith('/view/')) {
 
                 var countExecutingJobs = function() {
                     return $('#executors .progress-bar').length;
