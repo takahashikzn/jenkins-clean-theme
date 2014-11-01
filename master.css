@@ -240,6 +240,8 @@ td.inactive:hover {
     padding-left: 0!important;
     padding-right: 0!important;
     height: 100%!important;
+    float: left;
+    width: 15%;
 }
 
 #main-panel {
@@ -733,7 +735,15 @@ img[src*="progress-unknown.gif"], img[src*="progress-unknown-red.gif"] {
     padding: 0px;
 }
 
-#executors tr:not(:first-of-type) > th.pane {
+#executors .pane-header {
+    display: none;
+}
+
+#buildQueue .pane-header {
+    display: none;
+}
+
+#executors th.pane {
     background: transparent !important;
 }
 
