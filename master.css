@@ -241,7 +241,7 @@ td.inactive:hover {
     padding-right: 0!important;
     height: 100%!important;
     float: left;
-    width: 15%;
+    width: 20%;
 }
 
 #main-panel {
@@ -249,6 +249,7 @@ td.inactive:hover {
     padding: 10px!important;
     margin-left: 10px!important;
     height: 100%!important;
+    width: 79%;
 }
 
 table {
