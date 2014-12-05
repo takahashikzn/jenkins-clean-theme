@@ -92,14 +92,16 @@
         }, 1000);
     });
 
-    $("a[href$='.webm']").replaceWith(function() {
+    $(document).ready(function() {
+        $("a[href$='.webm']").replaceWith(function() {
 
-        var $this = $(this);
+            var $this = $(this);
 
-        return $('<video />').attr({
-            controls: 'controls',
-            width: '800',
-            src: $(this).prop('href')
+            return $('<video />').attr({
+                controls: 'controls',
+                width: '800',
+                src: $this.prop('href')
+            });
         });
     });
 
