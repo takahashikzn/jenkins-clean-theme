@@ -93,9 +93,14 @@
     });
 
     $(document).ready(function() {
+
+        var movies = [ 'webm', 'mp4', 'ogg', 'flv' ];
+        var images = [ 'jpg', 'png', 'gif', 'bmp' ];
+        var binaries = movies.concat(images).concat([ 'xls', 'xlsx' ]);
+
         setInterval(function() {
 
-            ['webm', 'mp4', 'ogg'].forEach(function(ext) {
+            movies.forEach(function(ext) {
 
                 $("a[href$='." + ext + "']").replaceWith(function() {
 
@@ -107,7 +112,9 @@
                         src: $this.prop('href')
                     });
                 });
+            });
 
+            binaries.forEach(function(ext) {
                 $("a[href$='." + ext + "/*view*/']").remove();
             });
         }, 250);
