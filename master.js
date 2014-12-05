@@ -104,7 +104,7 @@
                     src: $this.prop('href')
                 });
             });
-        }, 1000);
+        }, 250);
     });
 
     window.$jq = $; // keep for later use
