@@ -92,6 +92,17 @@
         }, 1000);
     });
 
+    $("a[href$='.webm']").replaceWith(function() {
+
+        var $this = $(this);
+
+        return $('<video />').attr({
+            controls: 'controls',
+            width: '800',
+            src: $(this).prop('href')
+        });
+    });
+
     window.$jq = $; // keep for later use
 
 })(jQuery.noConflict(true));
