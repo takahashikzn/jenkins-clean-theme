@@ -93,7 +93,7 @@
     });
 
     $(document).ready(function() {
-        $("a[href$='.webm']").replaceWith(function() {
+        $("a[href$='.webm'], a[href$='.mp4'], a[href$='.ogg']").replaceWith(function() {
 
             var $this = $(this);
 
