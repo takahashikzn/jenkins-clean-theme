@@ -94,15 +94,21 @@
 
     $(document).ready(function() {
         setInterval(function() {
-            $("a[href$='.webm'], a[href$='.mp4'], a[href$='.ogg']").replaceWith(function() {
 
-                var $this = $(this);
+            ['webm', 'mp4', 'ogg'].forEach(function(ext) {
 
-                return $('<video />').attr({
-                    controls: 'controls',
-                    width: '800',
-                    src: $this.prop('href')
+                $("a[href$='." + ext + "']").replaceWith(function() {
+
+                    var $this = $(this);
+
+                    return $('<video />').attr({
+                        controls: 'controls',
+                        width: '800',
+                        src: $this.prop('href')
+                    });
                 });
+
+                $("a[href$='." + ext + "/*view*/']").remove();
             });
         }, 250);
     });
