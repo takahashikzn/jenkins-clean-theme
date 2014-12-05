@@ -93,16 +93,18 @@
     });
 
     $(document).ready(function() {
-        $("a[href$='.webm'], a[href$='.mp4'], a[href$='.ogg']").replaceWith(function() {
+        setInterval(function() {
+            $("a[href$='.webm'], a[href$='.mp4'], a[href$='.ogg']").replaceWith(function() {
 
-            var $this = $(this);
+                var $this = $(this);
 
-            return $('<video />').attr({
-                controls: 'controls',
-                width: '800',
-                src: $this.prop('href')
+                return $('<video />').attr({
+                    controls: 'controls',
+                    width: '800',
+                    src: $this.prop('href')
+                });
             });
-        });
+        }, 1000);
     });
 
     window.$jq = $; // keep for later use
