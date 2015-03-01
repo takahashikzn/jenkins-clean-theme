@@ -2,6 +2,12 @@ body {
     background: #fff!important;
 }
 
+#jenkins-head-icon {
+  display: none !important;
+}
+#jenkins-name-icon {
+  display: none !important;
+}
 #main-panel > ul:nth-child(8) > li > img {
     margin-right: 10px;
     margin-bottom: 10px;
@@ -103,6 +109,11 @@ body {
     color: #326ca6!important;
 }
 
+#footer-container {
+    position: fixed;
+    bottom: 0;
+}
+
 a {
     color: #326ca6!important;
     text-decoration: none!important;
@@ -113,6 +124,11 @@ a {
 }
 
 #login-field>span>a {
+    color: #fff!important;
+    font-weight: 400!important;
+}
+
+#login-field>span>a:visited {
     color: #fff!important;
     font-weight: 400!important;
 }
@@ -240,16 +256,31 @@ td.inactive:hover {
     padding-left: 0!important;
     padding-right: 0!important;
     height: 100%!important;
+    /*
+<<<<<<< HEAD
     float: left;
     width: 20%;
+=======
+    */
+    position: absolute!important;
+    /*
+>>>>>>> 64f5eff858e95f64b0ac90e545ca029187cd6694
+    */
 }
 
 #main-panel {
     border-left: 1px solid #ddd!important;
-    padding: 10px!important;
     margin-left: 10px!important;
     height: 100%!important;
+    /*
+<<<<<<< HEAD
     width: 79%;
+=======
+    */
+    float: right!important;
+    /*
+>>>>>>> 64f5eff858e95f64b0ac90e545ca029187cd6694
+    */
 }
 
 table {
