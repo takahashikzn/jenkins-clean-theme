@@ -117,9 +117,14 @@ body {
     bottom: 0;
 }
 
-#main-panel-content, #bottom-sticker {
+#main-panel-content {
     /* footer margin */
     margin-bottom: 60px;
+}
+
+#bottom-sticker {
+    /* footer margin */
+    margin-bottom: 30px;
 }
 
 a {
