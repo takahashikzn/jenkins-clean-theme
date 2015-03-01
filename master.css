@@ -117,6 +117,11 @@ body {
     bottom: 0;
 }
 
+#main-panel-content {
+    /* footer margin */
+    margin-bottom: 60px;
+}
+
 a {
     color: #326ca6!important;
     text-decoration: none!important;
@@ -259,20 +264,15 @@ td.inactive:hover {
     padding-left: 0!important;
     padding-right: 0!important;
     height: 100%!important;
-
     float: left;
     width: 20%;
-
-    /* position: absolute!important; */
 }
 
 #main-panel {
     border-left: 1px solid #ddd!important;
     margin-left: 10px!important;
     height: 100%!important;
-
     width: 79%;
-    /* float: right!important; */
 }
 
 table {
