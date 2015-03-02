@@ -107,20 +107,15 @@
                     var $this = $(this);
                     var $video = $('<video />');
 
-                    var windowWidth = $(window).width();
-                    var largeScreen = (2000 < windowWidth);
-                    var initWidth = largeScreen ? 1200 : Math.floor(windowWidth * 0.25);
-                    var enlargedWidth = Math.min(initWidth * 2, 1600);
-
                     return $video.attr({
                         controls: 'controls',
-                        width: initWidth,
+                        width: Math.floor(($(window).width() - $('#side-panel').width() - $("div[style='float:right']").width()) * 0.9),
                         src: $this.prop('href')
                     }).click(function() {
-                        if (initWidth < $video.width()) {
-                            $video.width(initWidth);
+                        if ($video.prop('paused')) {
+                            $video[0].play();
                         } else {
-                            $video.width(enlargedWidth);
+                            $video[0].pause();
                         }
                     });
                 });
