@@ -107,9 +107,14 @@
                     var $this = $(this);
                     var $video = $('<video />');
 
+                    var minimumVideoControlWidth = 200;
+                    var desiredVideoWidth = Math.floor(($jq(window).width() - $jq('#side-panel').width() - $jq("#main-panel div[style='float:right']").width()) * 0.9);
+                    var videoWidthMargin = 250;
+                    var videoWidth = Math.max(desiredVideoWidth - videoWidthMargin, minimumVideoControlWidth);
+
                     return $video.attr({
                         controls: 'controls',
-                        width: Math.floor(($jq(window).width() - $jq('#side-panel').width() - $jq("#main-panel div[style='float:right']").width()) * 0.9) - 250,
+                        width: videoWidth,
                         src: $this.prop('href')
                     }).click(function() {
                         if ($video.prop('paused')) {
