@@ -115,6 +115,7 @@ body {
 #footer-container {
     position: fixed;
     bottom: 0;
+    z-index: 9999;
 }
 
 #main-panel-content {
@@ -268,7 +269,6 @@ td.inactive:hover {
     background: rgba(0,0,0,.05)!important;
     padding-left: 0!important;
     padding-right: 0!important;
-    height: 100%!important;
     float: left;
     width: 20%;
 }
@@ -308,17 +308,29 @@ table {
     overflow: auto;
 }
 
-#side-panel div {
-    padding-top: 3px;
-    padding-bottom: 3px;
-}
-
 #side-panel tr {
     border: none!important;
 }
 
 .pane {
     margin-top: 15px!important;
+}
+
+.build-row-cell {
+    margin-top: 0px;
+    padding-top: 2px;
+}
+
+.build-row-cell .build-badge {
+    padding: 2px;
+}
+
+.build-row-cell .pane {
+    margin-top: 0px!important;
+}
+
+.build-row-cell .left-bar {
+    display: none;
 }
 
 .subtasks,.task {
