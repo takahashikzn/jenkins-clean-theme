@@ -105,11 +105,23 @@
                 $("a[href$='." + ext + "']").replaceWith(function() {
 
                     var $this = $(this);
+                    var $video = $('<video />');
 
-                    return $('<video />').attr({
+                    var windowWidth = $(window).width();
+                    var largeScreen = (2000 < windowWidth);
+                    var initWidth = largeScreen ? 800 : Math.floor(windowWidth * 0.25);
+                    var enlargedWidth = Math.min(initWidth * 2, 1200);
+
+                    return $video.attr({
                         controls: 'controls',
-                        width: Math.floor($(window).width() * 0.2),
+                        width: initWidth,
                         src: $this.prop('href')
+                    }).click(function() {
+                        if (initWidth < $video.width()) {
+                            $video.width(initWidth);
+                        } else {
+                            $video.width(enlargedWidth);
+                        }
                     });
                 });
             });

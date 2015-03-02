@@ -123,6 +123,10 @@ body {
     margin-bottom: 60px;
 }
 
+#main-panel-content div[style='float:right'] {
+    width: 600px;
+}
+
 #bottom-sticker {
     /* footer margin */
     margin-bottom: 30px;
