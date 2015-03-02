@@ -109,8 +109,8 @@
 
                     var windowWidth = $(window).width();
                     var largeScreen = (2000 < windowWidth);
-                    var initWidth = largeScreen ? 800 : Math.floor(windowWidth * 0.25);
-                    var enlargedWidth = Math.min(initWidth * 2, 1200);
+                    var initWidth = largeScreen ? 1200 : Math.floor(windowWidth * 0.25);
+                    var enlargedWidth = Math.min(initWidth * 2, 1600);
 
                     return $video.attr({
                         controls: 'controls',
