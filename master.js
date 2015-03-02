@@ -109,7 +109,7 @@
 
                     return $video.attr({
                         controls: 'controls',
-                        width: Math.floor(($jq(window).width() - $jq('#side-panel').width() - $jq("#main-panel div[style='float:right']").width()) * 0.75),
+                        width: Math.floor(($jq(window).width() - $jq('#side-panel').width() - $jq("#main-panel div[style='float:right']").width()) * 0.9) - 250,
                         src: $this.prop('href')
                     }).click(function() {
                         if ($video.prop('paused')) {
