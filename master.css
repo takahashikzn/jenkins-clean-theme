@@ -333,6 +333,10 @@ table {
     display: none;
 }
 
+.build-row-cell .build-controls {
+    white-space: nowrap;
+}
+
 .subtasks,.task {
     min-height: 38px!important;
 }
