@@ -108,7 +108,7 @@
 
                     return $('<video />').attr({
                         controls: 'controls',
-                        width: '800',
+                        width: Math.floor($(window).width() * 0.2),
                         src: $this.prop('href')
                     });
                 });
