@@ -121,6 +121,7 @@ body {
 #main-panel-content {
     /* footer margin */
     margin-bottom: 60px;
+    margin-left: 50px;
 }
 
 #main-panel-content div[style='float:right'] {
@@ -869,4 +870,8 @@ img[src$="images/48x48/aborted.png"],  img[src$="images/48x48/aborted.gif"],  im
 #main-panel>pre>a,body>pre>a {
     color: #bf616a!important;
     text-decoration: underline;
+}
+
+.fixedGridLayout #side-panel {
+    width: 400px;
 }
