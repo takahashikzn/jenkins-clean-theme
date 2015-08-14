@@ -120,7 +120,7 @@
                     var videoWidthMargin = 250;
                     var videoWidth = Math.max(desiredVideoWidth - videoWidthMargin, minimumVideoControlWidth);
 
-                    $widthSlider.change(function() {
+                    $widthSlider.bind('input', function() {
                         $video.width(($(this).val() / 100) * videoWidth);
                     });
 
@@ -136,7 +136,7 @@
                         }
                     });
 
-                    return $container.append($widthSlider).append($video);
+                    return $container.append($widthSlider.wrap('<div />')).append($video);
                 });
             });
 
