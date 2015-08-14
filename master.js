@@ -104,7 +104,15 @@
 
                 $("a[href$='." + ext + "']").replaceWith(function() {
 
+                    var $container = $('<div />');
+
                     var $this = $(this);
+                    var $widthSlider = $('<input />').attr({
+                        type: 'range',
+                        min: 50,
+                        max: 200,
+                        step: 5
+                    });
                     var $video = $('<video />');
 
                     var minimumVideoControlWidth = 200;
@@ -112,7 +120,11 @@
                     var videoWidthMargin = 250;
                     var videoWidth = Math.max(desiredVideoWidth - videoWidthMargin, minimumVideoControlWidth);
 
-                    return $video.attr({
+                    $widthSlider.change(function() {
+                        $video.width(($(this).val() / 100) * videoWidth);
+                    });
+
+                    $video.attr({
                         controls: 'controls',
                         width: videoWidth,
                         src: $this.prop('href')
@@ -123,6 +135,8 @@
                             $video[0].pause();
                         }
                     });
+
+                    return $container.append($widthSlider).append($video);
                 });
             });
 
