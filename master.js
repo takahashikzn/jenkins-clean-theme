@@ -104,14 +104,12 @@
 
                 $("a[href$='." + ext + "']").replaceWith(function() {
 
-                    var $container = $('<div />');
-
                     var $this = $(this);
                     var $widthSlider = $('<input />').attr({
                         type: 'range',
                         min: 50,
-                        max: 200,
-                        step: 5
+                        max: 150,
+                        step: 20
                     });
                     var $video = $('<video />');
 
@@ -136,7 +134,12 @@
                         }
                     });
 
-                    return $container.append($widthSlider.wrap('<div />')).append($video);
+                    var $container = $('<div />');
+
+                    $container.append($('<div />').append('<span>Screen Size: </span>').append($widthSlider));
+                    $container.append($video);
+
+                    return $container;
                 });
             });
 
