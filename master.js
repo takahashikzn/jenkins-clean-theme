@@ -114,7 +114,7 @@
                     var $video = $('<video />');
 
                     var minimumVideoControlWidth = 200;
-                    var desiredVideoWidth = Math.min(Math.floor(($jq(window).width() - $jq('#side-panel').width() - $jq("#main-panel div[style='float:right']").width()) * 0.75), 1000);
+                    var desiredVideoWidth = Math.min(Math.floor(($jq(window).width() - $jq('#side-panel').width() - $jq("#main-panel div[style='float:right']").width()) * 0.9), 1100);
                     var videoWidthMargin = 250;
                     var videoWidth = Math.max(desiredVideoWidth - videoWidthMargin, minimumVideoControlWidth);
 
@@ -136,7 +136,7 @@
 
                     var $container = $('<div />');
 
-                    $container.append($('<div />').append('<span>Screen Size: </span>').append($widthSlider));
+                    $container.append($('<div />').append('<span>FrameSize </span>').append($widthSlider));
                     $container.append($video);
 
                     return $container;
