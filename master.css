@@ -128,11 +128,6 @@ body {
     width: 600px;
 }
 
-#bottom-sticker {
-    /* footer margin */
-    margin-bottom: 30px;
-}
-
 a {
     color: #326ca6!important;
     text-decoration: none!important;
