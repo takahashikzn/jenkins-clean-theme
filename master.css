@@ -186,7 +186,7 @@ tr {
 }
 
 #projectstatus td,.bigtable td {
-    padding: 10px!important;
+    padding: 6px !important;
 }
 
 #projectstatus tr:nth-child(even)>td,.bigtable tr:nth-child(even)>td {
