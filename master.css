@@ -868,3 +868,7 @@ img[src$="images/48x48/aborted.png"],  img[src$="images/48x48/aborted.gif"],  im
 .ui-tabs-nav {
     max-height: 50px;
 }
+
+.jenkins-config .config-table TR {
+    border-bottom: none !important;
+}
