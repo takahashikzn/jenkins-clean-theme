@@ -36,14 +36,6 @@
     });
 
     $(document).ready(function() {
-        $('#main-panel')
-            .removeClass('col-md-9').addClass('col-md-8')
-            .attr('style', 'border-left: none !important;')
-                .find("div[style='float:right'] div[align='right']")
-                .attr('align', 'left');
-    });
-
-    $(document).ready(function() {
         setTimeout(function() {
 
             var reloadPage = function() {
