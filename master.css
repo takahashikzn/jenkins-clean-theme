@@ -864,3 +864,7 @@ img[src$="images/48x48/aborted.png"],  img[src$="images/48x48/aborted.gif"],  im
 .fixedGridLayout #side-panel {
     width: 400px;
 }
+
+.ui-tabs-nav {
+    max-height: 50px;
+}
