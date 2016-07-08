@@ -359,10 +359,6 @@ td.pane:first-of-type,td.pane:last-of-type,th.pane:first-of-type,tr.build-row>td
     background: inherit!important;
 }
 
-form {
-    clear: both;
-}
-
 .pane-header,.pane-header>a {
     color: #505050!important;
 }
