@@ -871,3 +871,7 @@ img[src$="images/48x48/aborted.png"],  img[src$="images/48x48/aborted.gif"],  im
 .jenkins-config .config-table TR {
     border-bottom: none !important;
 }
+
+.build-row-cell .pane.build-details.block {
+    overflow: hidden !important;
+}
