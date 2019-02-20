@@ -120,9 +120,9 @@
                         src: $this.prop('href')
                     }).click(function() {
                         if ($video.prop('paused')) {
-                            $video[0].play();
+                            $video[0].play().catch(e => console.error(e));
                         } else {
-                            $video[0].pause();
+                            $video[0].pause().catch(e => console.error(e));
                         }
                     });
 
