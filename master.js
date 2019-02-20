@@ -89,8 +89,9 @@
         var movies = [ 'webm', 'mp4', 'ogg', 'flv' ];
         var images = [ 'jpg', 'png', 'gif', 'bmp' ];
         var binaries = movies.concat(images).concat([ 'xls', 'xlsx' ]);
+        var delay = 250;
 
-        setInterval(function() {
+        setTimeout(function() {
 
             movies.forEach(function(ext) {
 
@@ -119,11 +120,13 @@
                         width: videoWidth,
                         src: $this.prop('href')
                     }).click(function() {
-                        if ($video.prop('paused')) {
-                            $video[0].play().catch(e => console.error(e));
-                        } else {
-                            $video[0].pause().catch(e => console.error(e));
-                        }
+                        setTimeout(function() {
+                            if ($video.prop('paused')) {
+                                $video[0].play().catch(e => console.error(e));
+                            } else {
+                                $video[0].pause().catch(e => console.error(e));
+                            }
+                        }, delay);
                     });
 
                     var $container = $('<div />');
@@ -138,7 +141,7 @@
             binaries.forEach(function(ext) {
                 $("a[href$='." + ext + "/*view*/']").remove();
             });
-        }, 250);
+        }, delay);
     });
 
     window.$jq = $; // keep for later use
