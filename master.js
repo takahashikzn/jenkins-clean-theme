@@ -124,13 +124,13 @@
                         setTimeout(function() {
                             if (playing) {
                                 playing = false;
-                                $video[0].pause().catch(e => console.error(e));
+                                $video[0].pause();
                             } else {
                                 playing = true;
-                                $video[0].play().catch(e => console.error(e));
+                                $video[0].play();
                             }
                             
-                            setTimeout(() => playing = !$video[0].prop('paused'), delay);
+                            setTimeout(() => playing = !$video.prop('paused'), delay);
                         }, delay);
                     });
 
