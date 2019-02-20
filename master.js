@@ -115,17 +115,22 @@
                         $video.width(($(this).val() / 100) * videoWidth);
                     });
 
+                    var playing = false;
                     $video.attr({
                         controls: 'controls',
                         width: videoWidth,
                         src: $this.prop('href')
                     }).click(function() {
                         setTimeout(function() {
-                            if ($video.prop('paused')) {
-                                $video[0].play().catch(e => console.error(e));
-                            } else {
+                            if (playing) {
+                                playing = false;
                                 $video[0].pause().catch(e => console.error(e));
+                            } else {
+                                playing = true;
+                                $video[0].play().catch(e => console.error(e));
                             }
+                            
+                            setTimeout(() => playing = !$video[0].prop('paused'), delay);
                         }, delay);
                     });
 
