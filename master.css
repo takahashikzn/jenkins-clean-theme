@@ -54,11 +54,11 @@ body {
 }
 
 #breadcrumbs>.item, #breadcrumbs>.children {
-    display: none;
+    display: none !important;
 }
 
 .breadcrumbs__wrapper {
-    padding: 0;
+    padding: 0 !important;
 }
 
 .breadcrumbs__wrapper #right-top-nav {
