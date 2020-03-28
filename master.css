@@ -53,6 +53,19 @@ body {
     text-decoration: none!important;
 }
 
+#breadcrumbs>.item, #breadcrumbs>.children {
+    display: none;
+}
+
+.breadcrumbs__wrapper {
+    padding: 0;
+}
+
+.breadcrumbs__wrapper #right-top-nav {
+    background: #326ca6;
+    height: 40px !important;
+}
+
 #right-top-nav a {
     color: #fff!important;
     margin-top: 1px;
